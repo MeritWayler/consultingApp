@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+    	<!-- meta character set -->
+        <meta charset="utf-8">
+		<!-- Always force latest IE rendering engine or request Chrome Frame -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Contabilidades y Consultores Digitales</title>		
+		<!-- Meta Description -->
+
+		
+		<!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- CSS
+		================================================== -->
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Fontawesome Icon font --> 
+
+		<%= stylesheet_link_tag "assets/stylesheets/font-awesome.min.css" %>
+		<%= stylesheet_link_tag "assets/stylesheets/jquery.fancybox.css" %> 
+		<%= stylesheet_link_tag "assets/stylesheets/bootstrap.min.css" %> 
+		<%= stylesheet_link_tag "assets/stylesheets/owl.carousel.css" %> 
+		<%= stylesheet_link_tag "assets/stylesheets/slit-slider.css" %> 
+		<%= stylesheet_link_tag "assets/stylesheets/animate.css" %>  
+		<%= stylesheet_link_tag "assets/stylesheets/main.css" %> 
+        
+
+		<!-- Modernizer Script for old Browsers -->
+		<%= javascript_include_tag "assets/javascripts/modernizr-2.6.2.min.js" %> 
+        <!--<script src="js/modernizr-2.6.2.min.js"></script>-->
+
+    </head>
+	
+    <body id="body">
+
+		<!-- preloader -->
+		<div id="preloader">
+            <div class="loder-box">
+            	<div class="battery"></div>
+            </div>
+		</div>
+		<!-- end preloader -->
+
+        <!--
+        Fixed Navigation
+        ==================================== -->
+        <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+					<h1 class="navbar-brand">
+						<a href="#body">ccd</a>
+					</h1>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li><a href="#body">Inicio</a></li>
+                        <li><a href="#acerca">Acerca</a></li>
+                        <li><a href="#service">Servicios</a></li>
+                        <li><a href="#comoFunciona">¿Cómo Funciona?</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                        <li><a href="#price">Precios</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+
+                        <div class="dropdown" style="line-height: 50px;">
+						  <li onclick="myFunction()" style="padding-bottom: 15px; font-size: 15px; color:white; text-transform: uppercase; border: none; cursor: pointer; padding-left:15px; padding-right:15px;" class="dropbtn">Acciones</li>
+						  <div id="myDropdown" class="dropdown-content">
+						  	<a href="#">Mi Perfil</a>
+						    <a href="#">Subir Facturas</a>
+						    <a href="#">Ver Facturas</a>
+						  </div>
+						</div>
+
+                        <li><a data-toggle="modal" data-target="#loginModal" style="cursor: pointer; ">Iniciar Sesion</a></li>
+                </nav>
+				<!-- /main nav -->
+
+			<!-- START OF LOGIN MODAL -->
+				<div id="loginModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+
+				    <!-- Modal content-->
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        <h4 class="modal-title">Iniciar Sesión</h4>
+				      </div>
+				      <div class="modal-body">
+				        <form>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Correo</label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nombre@gmail.com">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Contraseña</label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+						  </div>
+						  <div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Recuérdame
+						    </label>
+						  </div>
+						  <button type="submit" class="btn btn-primary">Entrar</button>
+						</form>
+						<button type="button" class="btn btn-link" data-toggle="modal" data-target="#registrationModal" style="cursor: pointer; ">Registrarse</button>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			<!-- END OF MODAL -->
+
+			<!-- START OF REGISTER MODAL -->
+				<div id="registrationModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+				<!-- Modal content-->
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        <h4 class="modal-title">Registrarse</h4>
+				      </div>
+				      <div class="modal-body">
+				        <form>
+				          <div class="form-group">
+						    <p> Porfavor ingresa todos los datos que se piden a continuación para poder registrarse al sistema </p>
+						  </div>
+						  <div class="form-group">
+						    <label for="Name">Nombre</label>
+						    <input type="text" class="form-control" id="username" placeholder="Nombre">
+						  </div>
+						   <div class="form-group">
+						    <label for="lastName">Apellido</label>
+						    <input type="text" class="form-control" id="lastName" placeholder="Apellidos">
+						   </div>
+						   <div class="form-group">
+						    <label for="lastName">Dirección</label>
+						    <input type="text" class="form-control" id="street" placeholder="Calle">
+						    <input type="text" class="form-control" id="number" placeholder="Número de casa">
+						    <input type="text" class="form-control" id="colonia" placeholder="Colonia">
+						    <input type="text" class="form-control" id="postalCode" placeholder="Código Postal">
+						    <input type="text" class="form-control" id="state" placeholder="Estado">
+						   </div>
+						   <div class="form-group">
+						    <label for="lastName">Teléfono</label>
+						    <input type="text" class="form-control" id="phoneNumber" placeholder="Número de Teléfono">
+						   </div>
+						   <div class="form-group">
+						    <label for="email">Correo</label>
+						    <input type="text" class="form-control" id="lastName" placeholder="nombre@gmail.com">
+						   </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Contraseña</label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+						  </div>
+						
+						  <button type="submit" class="btn btn-primary">Registrarse</button>
+						</form>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				      </div>
+				    </div>
+
+				  </div>
+				</div>
+			<!-- END OF MODAL -->
+				
+            </div>
+        </header>
+        <!--
+        End Fixed Navigation
+        ==================================== -->
+		
+		<main class="site-content" role="main">
+		
+        <!--
+        Home Slider
+        ==================================== -->
+		
+		<section id="home-slider">
+            <div id="slider" class="sl-slider-wrapper">
+
+				<div class="sl-slider">
+				
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+
+						<div class="bg-img bg-img-1"></div>
+
+						<div class="slide-caption">
+                            <div class="caption-content">
+                                <h2 class="animated fadeInDown">Contabilidades y Consultorias Digitales</h2>
+                                <span class="animated fadeInDown">No tengas problemas de contabilidad, nosotros nos encargamos de todo</span>
+                                <a href="#" class="btn btn-blue btn-effect">Registrate</a>
+                            </div>
+                        </div>
+						
+					</div>
+					
+				</div><!-- /sl-slider -->
+
+
+			</div><!-- /slider-wrapper -->
+		</section>
+		
+        <!--
+        End Home SliderEnd
+        ==================================== -->
+			
+			<!-- about section -->
+	
+			<!-- end about section -->
+			
+			
+		
+			
+			<!-- portfolio section -->
+			<section id="acerca">
+				<div class="container">
+					<div class="row">
+
+					<!-- about section -->
+						<div class="col-md-4 fadeInLeft" style="text-align:justify;">
+							<div class="">
+								<h3>Sobre Nosotros</h3>
+								<div id="">
+									<div class="">
+										<p>Somos una empresa que se fundo hace 5 años con la visión de facilitar el cálculo de impuestos y la facturación de cualquier rubro de clientes.</p>
+									</div>
+									
+									<div class="" style="padding-top: 5px;">
+										<p> Nos enfocamos en la organizacion de tus facturas para calcular tus impuestos en base a tus ingresos y egresos y ofrecemos la consultoria a partir de esta informacion. El objetivo de nuestra empresa es estar a la vanguardia con la tecnologìa para poder ofrecerte lo mejor de lo mejor y que no tengas problemas fiscales.</p>
+									</div>
+									<div class="" style="padding-top: 5px;">
+										<p> El objetivo de nuestra empresa es estar a la vanguardia con la tecnologìa para poder ofrecerte lo mejor de lo mejor y que no tengas problemas fiscales.</p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7 col-md-offset-1 wow animated fadeInRight" style="text-align:justify;">
+							<div class="welcome-block">
+								<h3>Bienvenido al sistema</h3>								
+						     	 <div class="message-body">
+						     	 	<%= image_tag('member-1.jpg', class: 'pull-left', alt: 'member', style: 'padding-right:10px;') %>
+									<!--<img src="assets/images/member-1.jpg" class="pull-left" alt="member" style="padding-right:10px;" > -->
+						       		<p >Dentro de nuestro sitio podrás encontrar toda la información y las facilidades para mejorar tus procesos de impuestos, facturación y consultoria de tal. A través de nuestro sistema buscamos satisfacer a nuestros clientes para que jamás vuelvan a tener problemas fiscales. </p>
+						     	 </div>
+						       	<a href="#" class="btn btn-border btn-effect pull-right">Read More</a>
+						    </div>
+						</div>
+					</div>
+						
+				</div>
+			</section>
+			<!-- end portfolio section -->
+
+			<section id="service">
+				<div class="container">
+					<div class="row">
+					
+						<div class="sec-title text-center">
+							<h2 class="wow animated bounceInLeft">Servicios</h2>
+							<p class="wow animated bounceInRight">Estos son los servicios claves de nuestro sistema:</p>
+						</div>
+						
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-usd fa-3x"></i>
+								</div>
+								<h3>Facturación Electrónica</h3>
+								<p>Te realizamos todas tus facturas tu información.</p>
+							</div>
+						</div>
+					
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-calculator fa-3x"></i>
+								</div>
+								<h3>Cálculo de impuestos</h3>
+								<p>Te realizamos el cálculo de impuestos basados en tus ingresos y egresos mensuales. </p>
+							</div>
+						</div>
+					
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-folder fa-3x"></i>
+								</div>
+								<h3>Organización de tus ingresos y egresos</h3>
+								<p>Organizamos tus ingresos y egresos de manera mensual, a los cuales tu podras acceder y modificar con facilidad. </p>
+							</div>
+						</div>
+					
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-check-square-o fa-3x"></i>
+								</div>
+								
+								<h3>Rectificacón con SAT</h3>
+								<p>Todas las facturas e impuestos que se calculen a través del sistema serán rectificados con el SAT.</p>							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- end Service section -->
+
+				<!-- How it works section -->
+			<section id="comoFunciona">
+				<div class="container">
+					<div class="row">
+					
+						<div class="sec-title text-center">
+							<h2 class="wow animated bounceInLeft">¿Cómo Funciona?</h2>
+							<p class="wow animated bounceInRight">Estos son los pasos que nuestro sistema realiza:</p>
+						</div>
+						
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-sign-in fa-3x"></i>
+								</div>
+								<h3>Registrate en la Plataforma</h3>
+								<p>Al registrarte tendrás acceso al sistema para facilitarte el envio de archivos y acceso a consultoria.</p>
+							</div>
+						</div>
+					
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-file-archive-o fa-3x"></i>
+								</div>
+								<h3>Sube tus facturas</h3>
+								<p>Sube al sistema todas tus facturas emitidas y recibidas. </p>
+							</div>
+						</div>
+					
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-calculator fa-3x"></i>
+								</div>
+								<h3>Cálculo y organización de tus archivos</h3>
+								<p>Con las facturas que hayas subido, el sistema calculará tus impuestos mensuales y organizará tus archivos de tres maneras: mensualmente, por ingresos y egresos. </p>
+							</div>
+						</div>
+					
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+							<div class="service-item">
+								<div class="service-icon">
+									<i class="fa fa-legal fa-3x"></i>
+								</div>
+								
+								<h3>Traslado a SAT</h3>
+								<p>Nuestros asesores y contadores se encargaran de hacer todo lo necesario para llevar tus facturas e impuestos al corriente con hacienda.</p>							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- end Service section -->
+
+			<!-- Testimonial section -->
+			<section id="testimonials" class="parallax">
+				<div class="overlay">
+					<div class="container">
+						<div class="row">
+						
+							<div class="sec-title text-center white wow animated fadeInDown">
+								<h2>Lo que dice la gente</h2>
+							</div>
+							
+							<div id="testimonial" class=" wow animated fadeInUp">
+								<div class="testimonial-item text-center">
+									<img src="img/author.jpg" alt="Our Clients">
+									<div class="clearfix">
+										<span>Gabriel Ugarte Martínez</span>
+										<p>LLevaba años lidiando con diversos contadores y nunca he tenido un servicio como el que me ha dado el sistema de Contabilidades y Consultorias Digitales. Ahora, mi proceso de facturación e impuestos es mucho más sencillo, ademàs de confiable.</p>
+									</div>
+								</div>
+								<div class="testimonial-item text-center">
+									<img src="img/member-1.jpg" alt="Our Clients">
+									<div class="clearfix">
+										<span>Dr.Francisco Garza Medina</span>
+										<p>Siendo medico, lo último que quería hacer era preocuparme por mis facturaciones e impuestos. A través de éste sistema, me he sentido mucho más agusto sabiendo que los procesos son faciles, rápidos y confiables.</p>
+									</div>
+								</div>
+								<div class="testimonial-item text-center">
+									<img src="img/member-1.jpg" alt="Our Clients">
+									<div class="clearfix">
+										<span>Ing. Gerardo Daniel Zelaya</span>
+										<p>Gracias al sistema, el tiempo que le he dado a realizar mis impuestos ha dismunuido. Se siente genial no tener que estar pendiente de los procesos y saber que todo está en buenas manos.</p>
+									</div>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end Testimonial section -->
+			
+			<!-- Price section -->
+			<section id="price">
+				<div class="container">
+					<div class="row">
+					
+						<div class="sec-title text-center wow animated fadeInDown">
+							<h2>Precios</h2>
+							<p>El precio por nuestros servicios</p>
+						</div>
+						
+						<div class="col-md-4 wow animated fadeInUp">
+							<div class="price-table text-center">
+								<span>Pago Mensual</span>
+								<div class="value">
+									<span>$</span>
+									<span>1,500.00</span><br>
+									<span>mes</span>
+								</div>
+								<ul>
+									<li>Precio Normal</li>
+									<li><a href="#">Comprar</a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.4s">
+							<div class="price-table text-center"> <!--featured para ponerlo en azul -->
+								<span>Plan de 3 Mes</span>
+								<div class="value">
+									<span>$</span>
+									<span>8,100.00</span><br>
+									<span>3 meses</span>
+								</div>
+								<ul>
+									<li>Con un 10% de descuento mensual</li>
+									<li><a href="#">Comprar</a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.8s">
+							<div class="price-table text-center">
+								<span>Plan Anual</span>
+								<div class="value">
+									<span>$</span>
+									<span>15,300</span><br>
+									<span>año</span>
+								</div>
+								<ul>
+									<li>Con un 15% de descuento mensual</li>
+									<li><a href="#">Comprar</a></li>
+								</ul>
+							</div>
+						</div>
+		
+					</div>
+				</div>
+			</section>
+			<!-- end Price section -->
+			
+			<!-- Social section -->
+			<!-- Por verse si se implementa o no 
+			<section id="social" class="parallax">
+				<div class="overlay">
+					<div class="container">
+						<div class="row">
+						
+							<div class="sec-title text-center white wow animated fadeInDown">
+								<h2>FOLLOW US</h2>
+								<p>Beautifully simple follow buttons to help you get followers on</p>
+							</div>
+							
+							<ul class="social-button">
+								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-2x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>							
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			-->
+			<!-- end Social section -->
+
+			
+			<!-- Contact section -->
+			<section id="contact" >
+				<div class="container">
+					<div class="row">
+						
+						<div class="sec-title text-center wow animated fadeInDown">
+							<h2>Contáctanos</h2>
+							<p>Deja un mensaje</p>
+						</div>
+						
+						
+						<div class="col-md-7 contact-form wow animated fadeInLeft">
+							<form action="#" method="post">
+								<div class="input-field">
+									<input type="text" name="name" class="form-control" placeholder="Tu nombre...">
+								</div>
+								<div class="input-field">
+									<input type="email" name="email" class="form-control" placeholder="Tu correo...">
+								</div>
+								<div class="input-field">
+									<input type="text" name="subject" class="form-control" placeholder="Tema...">
+								</div>
+								<div class="input-field">
+									<textarea name="message" class="form-control" placeholder="Mensaje..."></textarea>
+								</div>
+						       	<button type="submit" id="submit" class="btn btn-blue btn-effect">Enviar</button>
+							</form>
+						</div>
+						
+						<div class="col-md-5 wow animated fadeInRight">
+							<address class="contact-details">
+								<h3>Nuestra información</h3>						
+								<p><i class="fa fa-pencil"></i>Av.Vasconcelos<span>C.P 66276</span> <span>Calle Morelos </span><span>México</span></p><br>
+								<p><i class="fa fa-phone"></i> Teléfono: (52) 811-600-59-70 </p>
+								<p><i class="fa fa-envelope"></i>gerardoJauregui@CCD.com</p>
+							</address>
+						</div>
+			
+					</div>
+				</div>
+			</section>
+			<!-- end Contact section -->
+			<!--Google map>
+			<section id="google-map">
+				<div id="map-canvas" class="wow animated fadeInUp"></div>
+			</section>
+			-->
+		
+		</main>
+		
+		<footer id="footer">
+			<div class="container">
+				<div class="row text-center">
+					<div class="footer-content">
+					    <!--
+						<div class="wow animated fadeInDown">
+							<p>newsletter signup</p>
+							<p>Get Cool Stuff! We hate spam!</p>
+						</div>
+						<form action="#" method="post" class="subscribe-form wow animated fadeInUp">
+							<div class="input-field">
+								<input type="email" class="subscribe form-control" placeholder="Enter Your Email...">
+								<button type="submit" class="submit-icon">
+									<i class="fa fa-paper-plane fa-lg"></i>
+								</button>
+							</div>
+						</form>S
+						<div class="footer-social">
+							<ul>
+								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-skype fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.9s"><a href="#"><i class="fa fa-dribbble fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="#"><i class="fa fa-youtube fa-3x"></i></a></li>
+							</ul>
+						</div>
+						-->
+						
+						<p>Copyright &copy; Agosto-Diciembre 2016 Diseñado e implementado por alumnos de <a href="http://www.themefisher.com">ITESM</a> </p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Essential jQuery Plugins
+		================================================== -->
+		<%= javascript_include_tag "assets/javascripts/modernizr-2.6.2.min.js" ,"assets/javascripts/jquery-1.11.1.min.js", "assets/javascripts/bootstrap.min.js", "assets/javascripts/jquery.singlePageNav.min.js", "assets/javascripts/jquery.fancybox.pack.js" , "assets/javascripts/owl.carousel.min.js" , "assets/javascripts/jquery.easing.min.js" , "assets/javascripts/jquery.slitslider.js" , "assets/javascripts/jquery.ba-cond.min.js" , "assets/javascripts/wow.min.js" , "assets/javascripts/main.js"  %> 
+		
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    </body>
+</html>
