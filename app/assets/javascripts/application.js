@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require modernizr-2.6.2
+//= jquery-1.11.1
+//= bootstrap
+//= jquery.singlePageNav
+//= jquery.fancybox.pack
+//= owl.carousel
+//= jquery.easing
+//= jquery.slitslider
+//= jquery.ba-cond
+//= wow
+//= main
+//= require_tree 
+

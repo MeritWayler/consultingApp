@@ -10,6 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *=require animate
+ *=require bootstrap
+ *=require font-awesome
+ *=require home
+ *=require jquery.fancybox
+ *=require jquery.fs.boxer
+ *=require lightview
+ *=require main
+ *=require owl.carousel
+ *=require slit-slider
+ *=require superslides
  *= require_tree .
  *= require_self
  */
