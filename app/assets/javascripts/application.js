@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require modernizr-2.6.2
+//= require modernizr-2.6.2.min
 //= jquery-1.11.1
 //= bootstrap
 //= jquery.singlePageNav
@@ -24,5 +24,4 @@
 //= jquery.ba-cond
 //= wow
 //= main
-//= require_tree 
-
+//= require_tree

@@ -11,11 +11,11 @@
  * It is generally better to create a new file per style scope.
  *
  *=require animate
- *=require bootstrap
- *=require font-awesome
+ *=require bootstrap.min
+ *=require font-awesome.min
  *=require home
  *=require jquery.fancybox
- *=require jquery.fs.boxer
+ *=require jquery.fs.boxer.min
  *=require lightview
  *=require main
  *=require owl.carousel
