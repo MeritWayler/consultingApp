@@ -13,7 +13,30 @@
 /* =================================== */
 /*	Basic Style 
 /* =================================== */
-    
+.flex-center {
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-h-center {
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-v-center {
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
 .navLetters{
     color:white;
     font-size:15px;

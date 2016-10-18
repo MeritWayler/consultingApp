@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
 
   get 'profile', to: 'profiles#index'
+  get 'viewProfiles', to: 'profiles#viewProfiles'
+
+
 end
