@@ -1,6 +1,6 @@
 class CreatePayments < ActiveRecord::Migration[5.0]
   def change
-    create_table :payments, :primary_key => :idPayment do |t|
+    create_table :payments do |t|
      	t.date :startDate
      	t.date :endDate
      	t.string :total

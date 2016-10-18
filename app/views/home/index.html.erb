@@ -23,17 +23,12 @@
 
 		<!-- Fontawesome Icon font -->
 
-		<%= stylesheet_link_tag "assets/stylesheets/font-awesome.min.css" %>
-		<%= stylesheet_link_tag "assets/stylesheets/jquery.fancybox.css" %>
-		<%= stylesheet_link_tag "assets/stylesheets/bootstrap.min.css" %>
-		<%= stylesheet_link_tag "assets/stylesheets/owl.carousel.css" %>
-		<%= stylesheet_link_tag "assets/stylesheets/slit-slider.css" %>
-		<%= stylesheet_link_tag "assets/stylesheets/animate.css" %>
-		<%= stylesheet_link_tag "assets/stylesheets/main.css" %>
+		<%= stylesheet_link_tag "application.css" %>
+
 
 
 		<!-- Modernizer Script for old Browsers -->
-		<%= javascript_include_tag "assets/javascripts/modernizr-2.6.2.min.js" %>
+		<%= javascript_include_tag "application.js" %>
         <!--<script src="js/modernizr-2.6.2.min.js"></script>-->
 
     </head>
@@ -51,143 +46,7 @@
         <!--
         Fixed Navigation
         ==================================== -->
-        <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-                    </button>
-					<!-- /responsive nav button -->
-
-					<!-- logo -->
-					<h1 class="navbar-brand">
-						<a href="#body">ccd</a>
-					</h1>
-					<!-- /logo -->
-                </div>
-
-				<!-- main nav -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                    <ul id="nav" class="nav navbar-nav">
-                        <li><a href="#body">Inicio</a></li>
-                        <li><a href="#acerca">Acerca</a></li>
-                        <li><a href="#service">Servicios</a></li>
-                        <li><a href="#comoFunciona">¿Cómo Funciona?</a></li>
-                        <li><a href="#testimonials">Testimonios</a></li>
-                        <li><a href="#price">Precios</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-
-                        <div class="dropdown" style="line-height: 50px;">
-						  <li onclick="myFunction()" style="padding-bottom: 15px; font-size: 15px; color:white; text-transform: uppercase; border: none; cursor: pointer; padding-left:15px; padding-right:15px;" class="dropbtn">Acciones</li>
-						  <div id="myDropdown" class="dropdown-content">
-						  	<a href="#">Mi Perfil</a>
-						    <a href="#">Subir Facturas</a>
-						    <a href="#">Ver Facturas</a>
-						  </div>
-						</div>
-
-                        <li><a data-toggle="modal" data-target="#loginModal" style="cursor: pointer; ">Iniciar Sesion</a></li>
-                </nav>
-				<!-- /main nav -->
-
-			<!-- START OF LOGIN MODAL -->
-				<div id="loginModal" class="modal fade" role="dialog">
-				  <div class="modal-dialog">
-
-				    <!-- Modal content-->
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h4 class="modal-title">Iniciar Sesión</h4>
-				      </div>
-				      <div class="modal-body">
-				        <form>
-						  <div class="form-group">
-						    <label for="exampleInputEmail1">Correo</label>
-						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nombre@gmail.com">
-						  </div>
-						  <div class="form-group">
-						    <label for="exampleInputPassword1">Contraseña</label>
-						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-						  </div>
-						  <div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Recuérdame
-						    </label>
-						  </div>
-						  <button type="submit" class="btn btn-primary">Entrar</button>
-						</form>
-						<button type="button" class="btn btn-link" data-toggle="modal" data-target="#registrationModal" style="cursor: pointer; ">Registrarse</button>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-			<!-- END OF MODAL -->
-
-			<!-- START OF REGISTER MODAL -->
-				<div id="registrationModal" class="modal fade" role="dialog">
-				  <div class="modal-dialog">
-				<!-- Modal content-->
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h4 class="modal-title">Registrarse</h4>
-				      </div>
-				      <div class="modal-body">
-				        <form>
-				          <div class="form-group">
-						    <p> Porfavor ingresa todos los datos que se piden a continuación para poder registrarse al sistema </p>
-						  </div>
-						  <div class="form-group">
-						    <label for="Name">Nombre</label>
-						    <input type="text" class="form-control" id="username" placeholder="Nombre">
-						  </div>
-						   <div class="form-group">
-						    <label for="lastName">Apellido</label>
-						    <input type="text" class="form-control" id="lastName" placeholder="Apellidos">
-						   </div>
-						   <div class="form-group">
-						    <label for="lastName">Dirección</label>
-						    <input type="text" class="form-control" id="street" placeholder="Calle">
-						    <input type="text" class="form-control" id="number" placeholder="Número de casa">
-						    <input type="text" class="form-control" id="colonia" placeholder="Colonia">
-						    <input type="text" class="form-control" id="postalCode" placeholder="Código Postal">
-						    <input type="text" class="form-control" id="state" placeholder="Estado">
-						   </div>
-						   <div class="form-group">
-						    <label for="lastName">Teléfono</label>
-						    <input type="text" class="form-control" id="phoneNumber" placeholder="Número de Teléfono">
-						   </div>
-						   <div class="form-group">
-						    <label for="email">Correo</label>
-						    <input type="text" class="form-control" id="lastName" placeholder="nombre@gmail.com">
-						   </div>
-						  <div class="form-group">
-						    <label for="exampleInputPassword1">Contraseña</label>
-						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-						  </div>
-
-						  <button type="submit" class="btn btn-primary">Registrarse</button>
-						</form>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				      </div>
-				    </div>
-
-				  </div>
-				</div>
-			<!-- END OF MODAL -->
-
-            </div>
-        </header>
+        
         <!--
         End Fixed Navigation
         ==================================== -->
@@ -263,7 +122,6 @@
 								<h3>Bienvenido al sistema</h3>
 						     	 <div class="message-body">
 						     	 	<%= image_tag('member-1.jpg', class: 'pull-left', alt: 'member', style: 'padding-right:10px;') %>
-									<!--<img src="assets/images/member-1.jpg" class="pull-left" alt="member" style="padding-right:10px;" > -->
 						       		<p >Dentro de nuestro sitio podrás encontrar toda la información y las facilidades para mejorar tus procesos de impuestos, facturación y consultoria de tal. A través de nuestro sistema buscamos satisfacer a nuestros clientes para que jamás vuelvan a tener problemas fiscales. </p>
 						     	 </div>
 						       	<a href="#" class="btn btn-border btn-effect pull-right">Read More</a>
@@ -398,14 +256,15 @@
 
 							<div id="testimonial" class=" wow animated fadeInUp">
 								<div class="testimonial-item text-center">
-									<img src="img/author.jpg" alt="Our Clients">
+									
+									<%= image_tag('author.jpg', alt: 'Our Clients') %>
 									<div class="clearfix">
 										<span>Gabriel Ugarte Martínez</span>
 										<p>LLevaba años lidiando con diversos contadores y nunca he tenido un servicio como el que me ha dado el sistema de Contabilidades y Consultorias Digitales. Ahora, mi proceso de facturación e impuestos es mucho más sencillo, ademàs de confiable.</p>
 									</div>
 								</div>
 								<div class="testimonial-item text-center">
-									<img src="img/member-1.jpg" alt="Our Clients">
+									<%= image_tag('member-1.jpg', alt: 'Our Clients') %>
 									<div class="clearfix">
 										<span>Dr.Francisco Garza Medina</span>
 										<p>Siendo medico, lo último que quería hacer era preocuparme por mis facturaciones e impuestos. A través de éste sistema, me he sentido mucho más agusto sabiendo que los procesos son faciles, rápidos y confiables.</p>
