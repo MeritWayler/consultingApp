@@ -1,0 +1,82 @@
+  <form>
+  <div class="flex-v-center">
+    <div class="form-group">
+      <label for="exampleInputFile" style="padding-bottom:15px">Ingresa el archivo</label>
+      <input type="file" id="exampleInputFile">
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputFile">Tipo de Factura</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Emitida
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            Recibida
+          </label>
+        </div>
+    </div>
+
+  </div>
+
+<div class="row">
+  <div id="table">
+      <table class="table">
+        <thead>
+          <th class="col-md-1">Datos</th>
+          <th class="col-md-1"></th>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Emisor:</strong></td>
+          <td>Hagane Software</td>
+        </tr>
+        <tr>
+          <td><strong>RFC del Emisor:</strong></td>
+          <td>HSO140224998</td>
+        </tr>
+        <tr>
+          <td><strong>Receptor:</strong></td>
+          <td>SOLUCIONES INTEGRALES EN SALUD Y SEGURIDAD EMPRESARIAL SA DE</td>
+        </tr>
+        <tr>
+          <td><strong>RFC del Receptor:</strong></td>
+          <td>SIS080409LI0</td>
+        </tr>
+        <tr>
+          <td><strong>subTotal:</strong></td>
+          <td>7500.00</td>
+        </tr>
+        <tr>
+          <td><strong>IVA:</strong></td>
+          <td>1200.00</td>
+        </tr>
+        <tr>
+          <td><strong>Total:</strong></td>
+          <td>8700.00</td>
+        </tr>
+
+        
+        <tr>
+            <textarea class="form-control" placeholer="Message"rows="10">
+                <catalog>
+                    <cd>
+                        <title>Empire Burlesque</title>
+                        <artist>Bob Dylan</artist>
+                        <country>USA</country>
+                        <country>Columbia</country>
+                        <price>10.90</price>
+                        <year>1985</year>
+                    </cd>
+                </catalog>
+            </textarea>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>

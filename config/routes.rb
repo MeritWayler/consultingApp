@@ -5,8 +5,13 @@ Rails.application.routes.draw do
   root 'home#index'
 
 
+  #PROFILES
   get 'profile', to: 'profiles#index'
   get 'viewProfiles', to: 'profiles#viewProfiles'
+
+  #INVOICES
+  get 'upload', to: 'invoices#index'
+  get 'viewInvoices', to: 'invoices#viewInvoices'
 
 
 end

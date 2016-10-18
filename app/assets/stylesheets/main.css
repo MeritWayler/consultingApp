@@ -13,6 +13,10 @@
 /* =================================== */
 /*	Basic Style 
 /* =================================== */
+.center-text {
+    text-align: center;
+}
+
 .flex-center {
     display: -webkit-flex;
     display:         flex;
