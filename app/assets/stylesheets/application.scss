@@ -10,17 +10,34 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *=require animate
- *=require bootstrap.min
- *=require font-awesome.min
- *=require home
- *=require jquery.fancybox
- *=require jquery.fs.boxer.min
- *=require lightview
- *=require main
- *=require owl.carousel
- *=require slit-slider
- *=require superslides
+ @import animate
+ @import bootstrap.min
+ @import font-awesome.min
+ @import home
+ @import jquery.fancybox
+ @import jquery.fs.boxer.min
+ @import lightview
+ @import main
+ @import owl.carousel
+ @import slit-slider
+ @import superslides
+ @import profiles
+ @import invoices
  *= require_tree 
  *= require_self
  */
+ @charset "utf-8";
+ @import "animate";
+ @import "bootstrap.min";
+ @import "font-awesome.min";
+ @import "home";
+ @import "jquery.fancybox";
+ @import "jquery.fs.boxer.min";
+ @import "lightview";
+ @import "main";
+ @import "owl.carousel";
+ @import "slit-slider";
+ @import "superslides";
+ @import "profiles";
+ @import "invoices";
+
