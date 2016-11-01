@@ -155,13 +155,13 @@
 }
 
 .bg-img-1 {
-	background-image: image-url(slider/banner.jpg); image-url("logo.png")
+	background-image: image-url("slider/banner.jpg"); /*imge-url("logo.png");*/
 }
 .bg-img-2 {
-	background-image: image-url(slider/affinity.jpeg);
+	background-image: image-url("slider/affinity.jpeg");
 }
 .bg-img-3 {
-	background-image: image-url(slider/cinelli.jpeg);
+	background-image: image-url("slider/cinelli.jpeg");
 }
 
 
