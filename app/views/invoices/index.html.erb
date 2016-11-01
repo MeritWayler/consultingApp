@@ -31,46 +31,37 @@
         <tbody>
         <tr>
           <td><strong>Emisor:</strong></td>
-          <td>Hagane Software</td>
+          <td><%= @nombreEmisor %></td>
         </tr>
         <tr>
           <td><strong>RFC del Emisor:</strong></td>
-          <td>HSO140224998</td>
+          <td><%= @rfcEmisor %></td>
         </tr>
         <tr>
           <td><strong>Receptor:</strong></td>
-          <td>SOLUCIONES INTEGRALES EN SALUD Y SEGURIDAD EMPRESARIAL SA DE</td>
+          <td><%= @nombreReceptor %></td>
         </tr>
         <tr>
           <td><strong>RFC del Receptor:</strong></td>
-          <td>SIS080409LI0</td>
+          <td><%= @rfcReceptor %></td>
         </tr>
         <tr>
           <td><strong>subTotal:</strong></td>
-          <td>7500.00</td>
+          <td><%= @subtotal %></td>
         </tr>
         <tr>
           <td><strong>IVA:</strong></td>
-          <td>1200.00</td>
+          <td><%= @iva %></td>
         </tr>
         <tr>
           <td><strong>Total:</strong></td>
-          <td>8700.00</td>
+          <td><%= @pagoTotal %></td>
         </tr>
 
         
         <tr>
             <textarea class="form-control" placeholer="Message"rows="10">
-                <catalog>
-                    <cd>
-                        <title>Empire Burlesque</title>
-                        <artist>Bob Dylan</artist>
-                        <country>USA</country>
-                        <country>Columbia</country>
-                        <price>10.90</price>
-                        <year>1985</year>
-                    </cd>
-                </catalog>
+              <%= @root %>
             </textarea>
         </tr>
       </tbody>
