@@ -29,6 +29,12 @@
           <th class="col-md-1"></th>
         </thead>
         <tbody>
+        <tr><strong> Vista Previa: </strong></tr>
+        <tr>
+            <textarea class="form-control" placeholer="Message"rows="10">
+              <%= @root %>
+            </textarea>
+        </tr>
         <tr>
           <td><strong>Emisor:</strong></td>
           <td><%= @nombreEmisor %></td>
@@ -56,13 +62,6 @@
         <tr>
           <td><strong>Total:</strong></td>
           <td><%= @pagoTotal %></td>
-        </tr>
-
-        
-        <tr>
-            <textarea class="form-control" placeholer="Message"rows="10">
-              <%= @root %>
-            </textarea>
         </tr>
       </tbody>
       </table>
