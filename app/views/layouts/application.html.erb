@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ConsultingApp</title>
+    <title>CCD</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-   <% if user_signed_in? %>
+  <% if user_signed_in? %>
 	<nav class="navbar navbar-default navLetters" >
   <div class="container-fluid  ">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,13 +32,14 @@
       <ul class="nav navbar-nav navbar-right">
         <i class="fa fa-user fa-2x" style="padding-top:5px"></i>
         <li class="dropdown">
-          <a style="color:white;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Eugenio <span class="caret"></span></a>
+          <a style="color:white;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %>. <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a style="color:black; opacity:.8 " href="/profile">Ver perfil</a></li>
             <li role="separator" class="divider"></li>
             <li><a style="color:black; opacity:.8 " href="/upload">Subir facturas</a></li>
             <li role="separator" class="divider"></li>
             <li><a style="color:black; opacity:.8 "  href="/viewInvoices">Ver facturas</a></li>
+            <li><%= link_to "Cerrar Sesión", destroy_user_session_path, :method => :delete %></li>
           </ul>
         </li>
       </ul>
@@ -46,7 +47,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <% else %>
-	<%= render  'nav_not_logged' %>
+	<%= render 'nav_not_logged' %>
 <% end %>
    <!--  <div class=" flex-v-center flex-h-center">  agregar esto en todas las views-->
     <%= yield %>

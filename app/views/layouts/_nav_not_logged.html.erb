@@ -29,14 +29,14 @@
                         <li><a href="#price">Precios</a></li>
                         <li><a href="#contact">Contacto</a></li>
 
-                        <div class="dropdown" style="line-height: 50px;">
+                       <!--  <div class="dropdown" style="line-height: 50px;">
 						  <li onclick="myFunction()" style="padding-bottom: 15px; font-size: 15px; color:white; text-transform: uppercase; border: none; cursor: pointer; padding-left:15px; padding-right:15px;" class="dropbtn">Acciones</li>
 						  <div id="myDropdown" class="dropdown-content">
 						  	<a href="#">Mi Perfil</a>
 						    <a href="#">Subir Facturas</a>
 						    <a href="#">Ver Facturas</a>
 						  </div>
-						</div>
+						</div> -->
 
                         <li><a data-toggle="modal" data-target="#loginModal" style="cursor: pointer; ">Iniciar Sesion</a></li>
                 </nav>
@@ -53,31 +53,41 @@
 				        <h4 class="modal-title">Iniciar Sesión</h4>
 				      </div>
 				      <div class="modal-body">
-				        <form>
-						  <div class="form-group">
-						    <label for="exampleInputEmail1">Correo</label>
-						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nombre@gmail.com">
-						  </div>
-						  <div class="form-group">
-						    <label for="exampleInputPassword1">Contraseña</label>
-						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-						  </div>
-						  <div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Recuérdame
-						    </label>
-						  </div>
-						  <button type="submit" class="btn btn-primary">Entrar</button>
-						</form>
+				        <%= form_for(:user, url: "/users/sign_in", method: :post) do |f| %>
+					  <div class="field form-group">
+					    <%= f.label :email%><br/> 
+					    <%= f.text_field :email, autofocus: true, placeholder: "Email", required: true, class: "form-control" %>
+					  </div>
+
+					  <div class="field form-group">
+					  gvhhvgv
+					    <%= f.label :password %><br />
+					    <%= f.password_field :password, placeholder: "Password", class: "form-control"%>
+					  </div>
+
+					    <div class="field form-group">
+					      <%= f.check_box :remember_me %>
+					      <%= f.label :remember_me %>
+					    </div>
+
+					  <div class="actions">
+					    <%= f.submit "Iniciar Sesión" %>
+					  </div>
+					<% end %>
 						<button type="button" class="btn btn-link" data-toggle="modal" data-target="#registrationModal" style="cursor: pointer; ">Registrarse</button>
+ 
 				      </div>
+
+
+
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				      </div>
 				    </div>
 				  </div>
-				</div>
-			<!-- END OF MODAL -->
+				</div
+
+			
 
 			<!-- START OF REGISTER MODAL -->
 				<div id="registrationModal" class="modal fade" role="dialog">
