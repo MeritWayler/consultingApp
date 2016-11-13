@@ -36,11 +36,11 @@
     <body id="body">
 
 		<!-- preloader -->
-		<div id="preloader">
+		<!-- <div id="preloader">
             <div class="loder-box">
             	<div class="battery"></div>
             </div>
-		</div>
+		</div> -->
 		<!-- end preloader -->
 
         <!--
@@ -72,6 +72,7 @@
                                 <span class="animated fadeInDown">No tengas problemas de contabilidad, nosotros nos encargamos de todo</span>
                                 <a href="#" class="btn btn-blue btn-effect" data-toggle="modal" data-target="#registrationModal" style="cursor: pointer; ">Registrate</a>
 
+
                             </div>
                         </div>
 
@@ -85,6 +86,66 @@
 				<div id="registrationModal" class="modal fade" role="dialog">
 				  <div class="modal-dialog">
 				<!-- Modal content-->
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        <h4 class="modal-title">Registrarse</h4>
+				      </div>
+				      <div class="modal-body"> 
+						<%= form_for(:user, as: :user, url: registration_path(:user)) do |f| %>
+							  <div class="field form-group">
+								  <%= f.label :Nombre %><br />
+								  <%= f.text_field :name %>
+							  </div>
+							  <div class="field form-group">
+							  	<%= f.label :Apellidos %><br />
+							  	<%= f.text_field :Name %>
+							  </div>
+
+							  <div class="field form-group">
+							  	<%= f.label :Correo %><br />
+							  	<%= f.email_field :email %>
+							  </div>
+
+							  <div class="field form-group">
+							  	<%= f.label :Teléfono%><br />
+							  	<%= f.text_field :phone %>
+							  </div>
+
+							  <div class="field form-group">
+							  	<%= f.label :RFC%><br />
+							  	<%= f.text_field :rfc %>
+							  </div>
+
+							  <div class="field form-group">
+							  	<%= f.label :Contraseña %><br />
+							  	<%= f.password_field :password %>
+							   </div>
+
+							  <div class="field form-group">
+							  	<%= f.label :Confirmar_Contraseña %><br />
+							  	<%= f.password_field :password_confirmation %>
+							  </div>
+								<!-- field form-group -->
+							  <div class=" field form-group btn btn-effect"> 
+							  	<%= f.submit "Registrarse" %>
+							  </div>
+							<% end %>
+							
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				      </div>
+				    </div>
+
+				  </div>
+				</div>
+			<!-- END OF MODAL -->
+
+			<!-- START OF REGISTER MODAL WHICH I DIDNT USE
+				<div id="registrationModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+				
 				    <div class="modal-content">
 				      <div class="modal-header">
 				        <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -134,7 +195,8 @@
 
 				  </div>
 				</div>
-			<!-- END OF MODAL -->
+			END OF MODAL 
+			-->
 		</section>
 
         <!--

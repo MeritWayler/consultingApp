@@ -7,9 +7,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <% if user_signed_in? %>
-	<nav class="navbar navbar-default navLetters" >
+	<nav class="navbar navbar-default navLetters navbar-inverse navbar-fixed-top animated-header" >
   <div class="container-fluid  ">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -20,15 +19,15 @@
         <span class="icon-bar"></span>
       </button>
       <h1 class="navbar-brand">
-            <a href="#body">ccd</a>
-          </h1>
+            <a href="/home/index">ccd</a>
+      </h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li ><a  style="color:white;" href="#">Inicio </a></li>
-      </ul>
+      <!-- <ul class="nav navbar-nav">
+        <li ><a  style="color:white;" href="/home/index">Inicio </a></li>
+      </ul> -->
       <ul class="nav navbar-nav navbar-right">
         <i class="fa fa-user fa-2x" style="padding-top:5px"></i>
         <li class="dropdown">

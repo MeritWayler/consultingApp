@@ -1,4 +1,6 @@
-<div class="container-fluid">
+<br>
+<br>
+<div class="container" >
    <div id="table-div">
     <span class = "table-buttons">
       <h3>Datos Personales</h3>
@@ -13,7 +15,7 @@
       <tbody>
         <tr>
           <td> <strong>Nombre</strong></td>
-          <td> Eugenio Martinez Ramos</td>
+          <td> <%= current_user.phone %>  </td>
         </tr>
         <tr>
           <td> <strong>Teléfono</strong></td>
@@ -21,7 +23,7 @@
         </tr>
         <tr>
           <td> <strong>Correo</strong></td>
-          <td>eugeniomartinez92@gmail.com</td>
+          <td><%= current_user.email %></td>
         </tr>
         <tr>
           <td> <strong>Estado</strong></td>
