@@ -4,7 +4,7 @@
     <div class="form-group">
       <label for="exampleInputFile" style="padding-bottom:15px">Ingresa el archivo</label>
        <%= form_for Receipt.new, url: upload_file_path do |f| %>
-        <%= f.file_field :factura %>
+        <%= f.file_field :factura, accept: 'text/xml'%>
         <%= submit_tag %>
       <% end %>
     </div>
