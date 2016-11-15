@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get 'viewProfiles', to: 'profiles#viewProfiles'
 
   #INVOICES
-  get 'upload', to: 'invoices#index'
+  get 'upload', to: 'invoices#index', as: :upload_file
+  post 'upload', to: 'invoices#upload'
   get 'viewInvoices', to: 'invoices#viewInvoices'
  #authentication
   

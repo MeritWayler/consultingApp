@@ -1,26 +1,25 @@
 class InvoicesController < ApplicationController
+	$x = nil
 	def viewInvoices
 	end
 	def index
+		if !$x.nil?
+			xml_file = File.read("app/importers/uploads/" + $x)
+			doc = Nokogiri::XML.parse(xml_file)
+			@root = doc.root
+			receptor = doc.xpath('//cfdi:Receptor')
+			emisor = doc.xpath('//cfdi:Emisor')
+			total = doc.xpath('//cfdi:Comprobante')
+			impuestos = doc.xpath('//cfdi:Traslado')
+			@nombreEmisor = emisor[0]["nombre"]
+			@rfcEmisor = emisor[0]["rfc"]
+			@nombreReceptor = receptor[0]["nombre"]
+			@rfcReceptor = receptor[0]["rfc"]
+			@subtotal = total[0]["subTotal"]
+			@iva = impuestos[0]["importe"]
+			@pagoTotal = total[0]["total"]
+		end
 		# Parse the URI and retrieve it to a temporary file
-	if !params[:factura].nil?
-		xml_file = File.read("F0000000047.xml")
-		doc = Nokogiri::XML.parse(xml_file)
-		@root = doc.root
-		receptor = doc.xpath('//cfdi:Receptor')
-		emisor = doc.xpath('//cfdi:Emisor')
-		total = doc.xpath('//cfdi:Comprobante')
-		impuestos = doc.xpath('//cfdi:Traslado')
-
-		@nombreEmisor = emisor[0]["nombre"]
-		@rfcEmisor = emisor[0]["rfc"]
-		@nombreReceptor = receptor[0]["nombre"]
-		@rfcReceptor = receptor[0]["rfc"]
-		@subtotal = total[0]["subTotal"]
-		@iva = impuestos[0]["importe"]
-		@pagoTotal = total[0]["total"]
-	else
-		@root = ""
 	end
 		#html output
 		#html =  "Emisor: " + nombreEmisor + " RFC Emisor : " + rfcEmisor + "\n" +
@@ -28,5 +27,19 @@ class InvoicesController < ApplicationController
 		#		"Subtotal: " + subtotal + " IVA: " + iva + " Total: " + pagoTotal
 
 		#extract the title from the articles
+
+	def upload
+		if !params[:receipt].nil?
+			uploaded_io = params[:receipt][:factura]
+			File.open(Rails.root.join('app/importers', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+			  file.write(uploaded_io.read)
+			end
+			$x = uploaded_io.original_filename
+			redirect_to action: 'index'
+		end
 	end
 end
+
+
+
+

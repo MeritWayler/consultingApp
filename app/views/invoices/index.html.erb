@@ -1,11 +1,10 @@
   <br><br><br>
   <div class="container">
-  <form>
   <div class="flex-v-center">
     <div class="form-group">
       <label for="exampleInputFile" style="padding-bottom:15px">Ingresa el archivo</label>
-      <%= form_tag({action: :index}, multipart: true) do %>
-        <%= file_field_tag :factura %>
+       <%= form_for Receipt.new, url: upload_file_path do |f| %>
+        <%= f.file_field :factura %>
         <%= submit_tag %>
       <% end %>
     </div>
@@ -74,5 +73,4 @@
 </div>
 
 <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
