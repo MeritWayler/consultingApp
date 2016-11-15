@@ -17,6 +17,11 @@
     text-align: center;
 }
 
+.center-vertical{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .flex-center {
     display: -webkit-flex;
     display:         flex;
