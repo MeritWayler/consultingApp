@@ -4,7 +4,10 @@
   <div class="flex-v-center">
     <div class="form-group">
       <label for="exampleInputFile" style="padding-bottom:15px">Ingresa el archivo</label>
-      <input type="file" id="exampleInputFile">
+      <%= form_tag({action: :index}, multipart: true) do %>
+        <%= file_field_tag :factura %>
+        <%= submit_tag %>
+      <% end %>
     </div>
     
     <div class="form-group">
@@ -33,7 +36,7 @@
         <tbody>
         <tr><strong> Vista Previa: </strong></tr>
         <tr>
-            <textarea class="form-control" placeholer="Message"rows="10">
+            <textarea class="form-control" placeholer="Message"rows="10" disabled>
               <%= @root %>
             </textarea>
         </tr>

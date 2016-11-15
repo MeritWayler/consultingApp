@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   #INVOICES
   get 'upload', to: 'invoices#index'
   get 'viewInvoices', to: 'invoices#viewInvoices'
-
  #authentication
   
 

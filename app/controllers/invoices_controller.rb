@@ -3,6 +3,7 @@ class InvoicesController < ApplicationController
 	end
 	def index
 		# Parse the URI and retrieve it to a temporary file
+	if !params[:factura].nil?
 		xml_file = File.read("F0000000047.xml")
 		doc = Nokogiri::XML.parse(xml_file)
 		@root = doc.root
@@ -18,6 +19,9 @@ class InvoicesController < ApplicationController
 		@subtotal = total[0]["subTotal"]
 		@iva = impuestos[0]["importe"]
 		@pagoTotal = total[0]["total"]
+	else
+		@root = ""
+	end
 		#html output
 		#html =  "Emisor: " + nombreEmisor + " RFC Emisor : " + rfcEmisor + "\n" +
 		#		"Receptor: " + nombreReceptor + " RFC Receptor : " + rfcReceptor + "\n" +
