@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     	t.string :lastName
     	t.string :phone
     	t.string :accountStatus
-    	t.boolean :admin 
     	t.string :rfc
       t.string :state
 

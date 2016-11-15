@@ -1,88 +1,177 @@
 <br>
 <br>
 <div class="container" >
-   <div id="table-div">
-    <span class = "table-buttons">
-      <h3>Datos Personales</h3>
-    </span>
-    <table class="table">
-       <thead>
-        <div class="row">
-        <th class="col-md-6"></th>
-        <th class="col-md-4"></th>
-        </div>
-      </thead> 
-      <tbody>
-        <tr>
-          <td> <strong>Nombre</strong></td>
-          <td> <%= current_user.name %>  </td>
-        </tr>
-        <tr>
-          <td> <strong>Teléfono</strong></td>
-          <td> <%= current_user.phone %></td>
-        </tr>
-        <tr>
-          <td> <strong>Correo</strong></td>
-          <td><%= current_user.email %></td>
-        </tr>
-        <tr>
-          <td> <strong>Estado</strong></td>
-          <td><%= current_user.state %></td>
-        </tr>
-        <tr>
-          <td> <strong>RFC</strong></td>
-          <td><%= current_user.rfc %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div> 
+  <% if current_user.admin? %>
+      <div id="table-div">
+      <span class = "table-buttons">
+        <a href="#" class="btn btn-default">Suscritos</a>
+        <a href="#" class="btn btn-default">No Suscritos</a>
+      </span>
+      <table class="table">
+        <thead>
+          <div class="row">
+          <th class="col-md-4">Nombre</th>
+          <th class="col-md-3">Correo</th>
+          <th class="col-md-4">Teléfono</th>
+          <th class="col-md-3">Estado</th>
+          <th class="col-md-4">RFC</th>
+          <th class="col-md-1">Archivos</th>
+          <th class="col-md-1"> Mandar correo</th>
+          </div>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td> <%= user.name %></td>
+            <td> <%= user.email %></td>
+            <td> <%= user.phone%></td>
+            <td> <%= user.state %></td>
+            <td> <%= user.rfc %></td>
+            <td> </td>
+            <td>
+              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Enviar Correo</button>
+            </td>
+          <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
- <div id="table-div">
-    <span class = "table-buttons">
-      <h3>Estado de Cuenta</h3>
-    </span>
-    <table class="table">
-       <thead>
-        <div class="row">
-        <th class="col-md-6"></th>
-        <th class="col-md-4"></th>
-        </div>
-      </thead> 
-      <tbody>
-        <tr>
-          <td> <strong>Plan:</strong></td>
-          <td> Ninguno</td>
-        </tr>
-        <tr>
-          <td> <strong>Fecha de Pago:</strong></td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td> <strong>Fecha de Vencimiento:</strong></td>
-          <td>-</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
 
-  <div id="table-div">
-  <h3>Historial de Cobro</h3>
-    <table class="table">
-      <thead>
-        <div class="row">
-        <th class="col-md-3">Plan</th>
-        <th class="col-md-3">Fecha de Pago</th>
-        <th class="col-md-3">Fecha de Terminación</th>
-        </div>
-      </thead>
-      <tbody>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Mandar correo</h4>
+              </div>
+              <div class="modal-body">
+                    <form class="form-horizontal" role="form" method="post" action="#">
+                        <div class="form-group">
+                            <label for="tema" class="col-sm-2 control-label">Tema</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="tema" name="tema" placeholder="Tema" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="col-sm-2 control-label">Message</label>
+                            <div class="col-sm-10">
+                              <textarea class="form-control" rows="4" name="message"></textarea>
+                            </div>
+                          </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                              <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                              <!-- Will be used to display an alert to the user-->
+                            </div>
+                        </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
 
-</div>
+          </div>
+        </div>
+
+  <% else %>
+
+       <div id="table-div">
+        <span class = "table-buttons">
+          <h3>Datos Personales</h3>
+        </span>
+        <table class="table">
+           <thead>
+            <div class="row">
+            <th class="col-md-6"></th>
+            <th class="col-md-4"></th>
+            </div>
+          </thead> 
+          <tbody>
+            <tr>
+              <td> <strong>Nombre</strong></td>
+              <td> <%= current_user.name %>  </td>
+            </tr>
+            <tr>
+              <td> <strong>Teléfono</strong></td>
+              <td> <%= current_user.phone %></td>
+            </tr>
+            <tr>
+              <td> <strong>Correo</strong></td>
+              <td><%= current_user.email %></td>
+            </tr>
+            <tr>
+              <td> <strong>Estado</strong></td>
+              <td><%= current_user.state %></td>
+            </tr>
+            <tr>
+              <td> <strong>RFC</strong></td>
+              <td><%= current_user.rfc %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> 
+
+     <div id="table-div">
+        <span class = "table-buttons">
+          <h3>Estado de Cuenta</h3>
+        </span>
+        <table class="table">
+           <thead>
+            <div class="row">
+            <th class="col-md-6"></th>
+            <th class="col-md-4"></th>
+            </div>
+          </thead> 
+          <tbody>
+            <tr>
+              <td> <strong>Plan:</strong></td>
+              <td> Ninguno</td>
+            </tr>
+            <tr>
+              <td> <strong>Fecha de Pago:</strong></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td> <strong>Fecha de Vencimiento:</strong></td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="table-div">
+      <h3>Historial de Cobro</h3>
+        <table class="table">
+          <thead>
+            <div class="row">
+            <th class="col-md-3">Plan</th>
+            <th class="col-md-3">Fecha de Pago</th>
+            <th class="col-md-3">Fecha de Terminación</th>
+            </div>
+          </thead>
+          <tbody>
+            <tr>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  <% end %>
