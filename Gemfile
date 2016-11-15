@@ -31,7 +31,7 @@ gem 'font-awesome-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'paperclip', '~> 3.0'
+gem "paperclip", "~> 5.0.0"
 gem 'nokogiri'
 
 group :development, :test do
