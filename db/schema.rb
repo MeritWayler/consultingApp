@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20161018012741) do
     t.date     "startDate"
     t.date     "endDate"
     t.string   "total"
+    t.integer  "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_payments_on_users_id", using: :btree
   end
 
   create_table "receipts", force: :cascade do |t|
@@ -31,8 +33,10 @@ ActiveRecord::Schema.define(version: 20161018012741) do
     t.float    "total"
     t.float    "iva"
     t.string   "xml"
+    t.integer  "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_receipts_on_users_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +62,6 @@ ActiveRecord::Schema.define(version: 20161018012741) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "payments", "users", column: "users_id"
+  add_foreign_key "receipts", "users", column: "users_id"
 end

@@ -8,6 +8,7 @@ class CreateReceipts < ActiveRecord::Migration[5.0]
     	t.float :total
     	t.float :iva
     	t.string :xml 
+      t.references :users, foreign_key: true
       t.timestamps
     end
   end

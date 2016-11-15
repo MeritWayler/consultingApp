@@ -1,3 +1,3 @@
 class Receipt < ApplicationRecord
-	has_one :user
+	belongs_to :user
 end

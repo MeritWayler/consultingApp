@@ -101,11 +101,11 @@
 						<%= form_for(:user, as: :user, url: registration_path(:user)) do |f| %>
 							  <div class="field form-group">
 								  <%= f.label :Nombre %><br />
-								  <%= f.text_field :first_name %>
+								  <%= f.text_field :name %>
 							  </div>
 							  <div class="field form-group">
 							  	<%= f.label :Apellidos %><br />
-							  	<%= f.text_field :last_name %>
+							  	<%= f.text_field :lastName %>
 							  </div>
 
 							  <div class="field form-group">

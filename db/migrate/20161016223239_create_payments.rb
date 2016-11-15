@@ -4,7 +4,7 @@ class CreatePayments < ActiveRecord::Migration[5.0]
      	t.date :startDate
      	t.date :endDate
      	t.string :total
-     	#t.references :users, foreign_key: true
+     	t.references :users, foreign_key: true
       t.timestamps
     end
   end

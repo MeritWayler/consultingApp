@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :payments
 	has_many :receipts
+
+	
 end
