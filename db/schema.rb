@@ -43,9 +43,10 @@ ActiveRecord::Schema.define(version: 20161018012741) do
     t.string   "name"
     t.string   "lastName"
     t.string   "phone"
-    t.string   "accountState"
+    t.string   "accountStatus"
     t.boolean  "admin"
     t.string   "rfc"
+    t.string   "state"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

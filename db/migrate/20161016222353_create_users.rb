@@ -4,9 +4,10 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     	t.string :name
     	t.string :lastName
     	t.string :phone
-    	t.string :accountState
+    	t.string :accountStatus
     	t.boolean :admin 
     	t.string :rfc
+      t.string :state
 
 
       t.timestamps
