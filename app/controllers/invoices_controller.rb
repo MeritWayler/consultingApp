@@ -1,6 +1,11 @@
 class InvoicesController < ApplicationController
 	$x = nil
 	def viewInvoices
+		if (current_user.admin)
+			@receipt = Receipt.all
+		else
+			@receipt = Receipt.where("user_email = ?", current_user.email)
+		end
 	end
 	def index
 		if !$x.nil?
@@ -27,6 +32,9 @@ class InvoicesController < ApplicationController
 		#		"Subtotal: " + subtotal + " IVA: " + iva + " Total: " + pagoTotal
 
 		#extract the title from the articles
+	def saveReceipt
+		
+	end
 
 	def upload
 		if !params[:receipt].nil?
@@ -37,6 +45,12 @@ class InvoicesController < ApplicationController
 			$x = uploaded_io.original_filename
 			redirect_to action: 'index'
 		end
+	end
+
+	def viewDetail
+		@total = Receipt.where("id = ?", params[:id]).map(&:total)
+		@emisor = Receipt.where("id = ?", params[:id]).map(&:user_email)	
+		@id = Receipt.where("id = ?", params[:id]).map(&:id)
 	end
 end
 

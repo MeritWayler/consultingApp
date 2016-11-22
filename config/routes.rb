@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get 'upload', to: 'invoices#index', as: :upload_file
   post 'upload', to: 'invoices#upload'
   get 'viewInvoices', to: 'invoices#viewInvoices'
+  get 'saveReceipt', to: 'invoices#saveReceipt'
+  get 'viewDetail', to: 'invoices#viewDetail'
+
  #authentication
   
 

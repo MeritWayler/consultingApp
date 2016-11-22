@@ -1,0 +1,70 @@
+  <br><br><br>
+  <div class="container">
+  <form>
+  <div class="flex-v-center">
+    <div class="form-group">
+        <label for="exampleInputFile">Tipo de Factura</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Emitida
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            Recibida
+          </label>
+        </div>
+    </div>
+
+  </div>
+
+<div class="row">
+  <div id="table">
+      <table class="table">
+        <thead>
+          <th class="col-md-1">Datos</th>
+          <th class="col-md-1"></th>
+        </thead>
+        <tbody>
+        <tr><strong> Vista Previa: </strong></tr>
+        <tr>
+            <textarea class="form-control" placeholer="Message"rows="10">
+              <%= @root %>
+            </textarea>
+
+        </tr>
+        <tr>
+          <td><strong>Emisor:</strong></td>
+          <td><%= @emisor%></td>
+        </tr>
+        <tr>
+          <td><strong>RFC del Emisor:</strong></td>
+          <td><%= @id%></td>
+        </tr>
+        <tr>
+          <td><strong>Receptor:</strong></td>
+          <td><%= @emisor%></td>
+        </tr>
+        <tr>
+          <td><strong>RFC del Receptor:</strong></td>
+          <td><%= @id %></td>
+        </tr>
+        <tr>
+          <td><strong>subTotal:</strong></td>
+          <td><%= @total %></td>
+        </tr>
+        <tr>
+          <td><strong>IVA:</strong></td>
+          <td><%=  %></td>
+        </tr>
+        <tr>
+          <td><strong>Total:</strong></td>
+          <td><%= @total %></td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+</div>
+
+</form>
+</div>

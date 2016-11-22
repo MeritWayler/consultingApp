@@ -5,7 +5,8 @@
   <div class="flex-v-center center-text">
       <div class="form-group">
         <label for="exampleInputFile">Tipo de Factura</label>
-          <select class="form-control">
+          <select class="form-control" id = "tipo" onchange="getval(this);" >
+            <option>Ninguno</option>
             <option>Emitido</option>
             <option>Recibido</option>
           </select>
@@ -46,6 +47,9 @@
             <option>12</option>
           </select>
       </div>
+      <div class="form-group" style="padding-left:20px; padding-top:30px">
+        <%= link_to 'Actualizar', {:controller => "invoices", :action => "viewInvoices", :tipo =>  'E'}%>
+      </div>
   </div>
 </form>
 
@@ -56,25 +60,22 @@
         <th class="col-md-2">Clave de Factura</th>
         <th class="col-md-1">Mes</th>
         <th class="col-md-1">Año</th>
-        <th class="col-md-2">Emisor</th>
-        <th class="col-md-2">Receptor</th>
+        <th class="col-md-2">Dueño</th>
+        <th class="col-md-2">Tipo</th>
         <th class="col-md-1">Total</th>
         </div>
       </thead>
       <tbody>
-        <tr>
-          <td>H08T7U4R</td>
-          <td>Diciembre</td>
-          <td>2015</td>
-          <td>Hagane Software</td>
-          <td>Servicios de Salud</td>
-          <td>8700.00</td>
-
-          <!-- <td>  AQUI VA MODAL PARA VER TODOS LOS DATOS
-            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Ver datos completos</button>
-          </td> -->
-
-        </tr>
+        <% @receipt.each do |r| %>
+            <tr>
+                <td><%= link_to r.id, viewDetail_path(id: r.id)%></td>
+                <td><%= r.date %> </td>
+                <td><%= r.date %> </td>
+                <td><%= r.user_email %> </td>
+                <td><%= r.tipo %> </td>
+                <td><%= r.total %> </td>
+            </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
