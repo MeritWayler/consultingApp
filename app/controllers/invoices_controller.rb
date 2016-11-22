@@ -66,13 +66,16 @@ class InvoicesController < ApplicationController
 		end
 	end
 	
-	def deleteReceipt
-
+	def destroyReceipt
+		@email = Receipt.where("id = ?", params[:id]).map(&:user_email)
+		Receipt.find(params[:id]).destroy
+		redirect_to action: 'viewInvoices' , email: @email[0]
 	end
 
 
 	def viewDetail
 		@concepto = Receipt.where("id = ?", params[:id]).map(&:concept)
+		@id = params[:id]
 		@root = Receipt.where("id = ?", params[:id]).map(&:xml)
 		@date = Receipt.where("id = ?", params[:id]).map(&:created_at)
 		@emisor = Receipt.where("id = ?", params[:id]).map(&:emisor)

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'viewInvoices', to: 'invoices#viewInvoices'
   get 'saveReceipt', to: 'invoices#viewInvoices'
   post 'saveReceipt', to: 'invoices#saveReceipt'
+  get 'destroyReceipt', to: 'invoices#viewInvoices'
+  post 'destroyReceipt', to: 'invoices#destroyReceipt'
   get 'viewDetail', to: 'invoices#viewDetail'
 
  #authentication
