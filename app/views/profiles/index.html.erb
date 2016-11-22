@@ -27,7 +27,7 @@
             <td> <%= user.phone%></td>
             <td> <%= user.state %></td>
             <td> <%= user.rfc %></td>
-            <td> </td>
+            <td> <%= link_to 'Ver', viewInvoices_path(email: user.email)%> </td>
             <td>
               <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Enviar Correo</button>
             </td>

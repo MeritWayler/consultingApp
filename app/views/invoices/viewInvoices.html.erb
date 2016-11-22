@@ -1,6 +1,7 @@
 <br><br><br>
 <div class="container">
 <form>
+
  <!--  <strong style="padding-bottom:15px;"> Elige el tipo de factura que quieres al llenar los siguientes campos: </strong> -->
   <div class="flex-v-center center-text">
       <div class="form-group">
@@ -60,8 +61,9 @@
         <th class="col-md-2">Clave de Factura</th>
         <th class="col-md-1">Mes</th>
         <th class="col-md-1">Año</th>
-        <th class="col-md-2">Dueño</th>
-        <th class="col-md-2">Tipo</th>
+        <th class="col-md-2">Emisor</th>
+        <th class="col-md-2">Receptor</th>
+        <th class="col-md-2">Concepto</th>
         <th class="col-md-1">Total</th>
         </div>
       </thead>
@@ -69,10 +71,11 @@
         <% @receipt.each do |r| %>
             <tr>
                 <td><%= link_to r.id, viewDetail_path(id: r.id)%></td>
-                <td><%= r.date %> </td>
-                <td><%= r.date %> </td>
+                <td><%= r.created_at.month%> </td>
+                <td><%= r.created_at.year%> </td>
                 <td><%= r.user_email %> </td>
-                <td><%= r.tipo %> </td>
+                <td><%= r.user_email %> </td>
+                <td><%= r.concept %> </td>
                 <td><%= r.total %> </td>
             </tr>
         <% end %>

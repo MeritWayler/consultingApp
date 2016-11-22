@@ -2,7 +2,7 @@ class InvoicesController < ApplicationController
 	$x = nil
 	def viewInvoices
 		if (current_user.admin)
-			@receipt = Receipt.all
+			@receipt = Receipt.where("user_email = ?", params[:email])
 		else
 			@receipt = Receipt.where("user_email = ?", current_user.email)
 		end
@@ -46,11 +46,16 @@ class InvoicesController < ApplicationController
 			redirect_to action: 'index'
 		end
 	end
-
+	
 	def viewDetail
+		@concepto = Receipt.where("id = ?", params[:id]).map(&:concept)
+		@emisor = Receipt.where("id = ?", params[:id]).map(&:emisor)
+		@rfcEmisor = Receipt.where("id = ?", params[:id]).map(&:rfcEmisor)
+		@receptor = Receipt.where("id = ?", params[:id]).map(&:receptor)
+		@rfcReceptor = Receipt.where("id = ?", params[:id]).map(&:rfcReceptor)
+		@subtotal = Receipt.where("id = ?", params[:id]).map(&:subtotal)
+		@iva = Receipt.where("id = ?", params[:id]).map(&:iva)
 		@total = Receipt.where("id = ?", params[:id]).map(&:total)
-		@emisor = Receipt.where("id = ?", params[:id]).map(&:user_email)	
-		@id = Receipt.where("id = ?", params[:id]).map(&:id)
 	end
 end
 
