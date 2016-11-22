@@ -66,5 +66,7 @@
       </table>
   </div>
 </div>
-    <%= link_to "Guardar Factura", saveReceipt_path(:rawxml => @root, :emisor => @nombreEmisor, :rfcemisor => @rfcEmisor, :receptor => @nombreReceptor, :rfcreceptor => @rfcReceptor, :subtotal => @subtotal, :iva => @iva, :pagototal => @pagoTotal, :tipofactura => @tipodeFactura), :class => "btn btn-primary" %>
+
+    <%= link_to "Guardar Factura", saveReceipt_path(:rawxml => @root, :emisor => @nombreEmisor, :rfcemisor => @rfcEmisor, :receptor => @nombreReceptor, :rfcreceptor => @rfcReceptor, :subtotal => @subtotal, :iva => @iva, :pagototal => @pagoTotal, :tipofactura => @tipodeFactura), method: :post %>
 </div>
+</br> </br>

@@ -38,7 +38,7 @@ class InvoicesController < ApplicationController
 		#extract the title from the articles
 	def saveReceipt
 		current_time = DateTime.now
-		@object = Receipt.new(:concept => params[:tipofactura],
+		Receipt.create!(:concept => params[:tipofactura],
 							:subtotal => params[:subtotal],
 							:total => params[:pagototal],
 							:iva => params[:iva],
@@ -51,8 +51,7 @@ class InvoicesController < ApplicationController
 							:rfcEmisor => params[:rfcemisor],
 							:receptor => params[:receptor],
 							:rfcReceptor => params[:rfcreceptor])
-		@object.save
-		render :action => "viewInvoices"
+		redirect_to action: 'viewInvoices' , email: current_user.email
 	end
 
 	def upload
