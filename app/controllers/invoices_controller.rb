@@ -1,5 +1,8 @@
+require 'date'
+
 class InvoicesController < ApplicationController
 	$x = nil
+	$tipodefactura = nil;
 	def viewInvoices
 		if (current_user.admin)
 			@receipt = Receipt.where("user_email = ?", params[:email])
@@ -23,6 +26,7 @@ class InvoicesController < ApplicationController
 			@subtotal = total[0]["subTotal"]
 			@iva = impuestos[0]["importe"]
 			@pagoTotal = total[0]["total"]
+			@tipodeFactura = $tipodefactura
 		end
 		# Parse the URI and retrieve it to a temporary file
 	end
@@ -33,7 +37,22 @@ class InvoicesController < ApplicationController
 
 		#extract the title from the articles
 	def saveReceipt
-		
+		current_time = DateTime.now
+		@object = Receipt.new(:concept => params[:tipofactura],
+							:subtotal => params[:subtotal],
+							:total => params[:pagototal],
+							:iva => params[:iva],
+							:xml => params[:rawxml],
+							:users_id => current_user.id,
+							:created_at => current_time,
+							:updated_at => current_time,
+							:user_email => current_user.email,
+							:emisor => params[:emisor],
+							:rfcEmisor => params[:rfcemisor],
+							:receptor => params[:receptor],
+							:rfcReceptor => params[:rfcreceptor])
+		@object.save
+		render :action => "viewInvoices"
 	end
 
 	def upload
@@ -43,6 +62,7 @@ class InvoicesController < ApplicationController
 			  file.write(uploaded_io.read)
 			end
 			$x = uploaded_io.original_filename
+			$tipodefactura = params[:tipofactura]
 			redirect_to action: 'index'
 		end
 	end
