@@ -66,8 +66,15 @@ class InvoicesController < ApplicationController
 		end
 	end
 	
+	def deleteReceipt
+
+	end
+
+
 	def viewDetail
 		@concepto = Receipt.where("id = ?", params[:id]).map(&:concept)
+		@root = Receipt.where("id = ?", params[:id]).map(&:xml)
+		@date = Receipt.where("id = ?", params[:id]).map(&:created_at)
 		@emisor = Receipt.where("id = ?", params[:id]).map(&:emisor)
 		@rfcEmisor = Receipt.where("id = ?", params[:id]).map(&:rfcEmisor)
 		@receptor = Receipt.where("id = ?", params[:id]).map(&:receptor)

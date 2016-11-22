@@ -1,22 +1,6 @@
   <br><br><br>
   <div class="container">
   <form>
-  <div class="flex-v-center">
-    <div class="form-group">
-        <label for="exampleInputFile">Tipo de Factura</label>
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-            Emitida
-          </label>
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-            Recibida
-          </label>
-        </div>
-    </div>
-
-  </div>
 
 <div class="row">
   <div id="table">
@@ -35,35 +19,39 @@
         </tr>
         <tr>
           <td><strong>Concepto:</strong></td>
-          <td><%= @concepto%></td>
+          <td><%= @concepto[0]%></td>
+        </tr>
+        <tr>
+          <td><strong>Añadida en:</strong></td>
+          <td><%= Date.parse(@date.to_s()).strftime("%e / %m / %Y") %></td>
         </tr>
         <tr>
           <td><strong>Emisor:</strong></td>
-          <td><%= @emisor%></td>
+          <td><%= @emisor[0]%></td>
         </tr>
         <tr>
           <td><strong>RFC del Emisor:</strong></td>
-          <td><%= @rfcReceptor%></td>
+          <td><%= @rfcReceptor[0]%></td>
         </tr>
         <tr>
           <td><strong>Receptor:</strong></td>
-          <td><%= @receptor%></td>
+          <td><%= @receptor[0]%></td>
         </tr>
         <tr>
           <td><strong>RFC del Receptor:</strong></td>
-          <td><%= @rfcReceptor %></td>
+          <td><%= @rfcReceptor[0] %></td>
         </tr>
         <tr>
           <td><strong>subTotal:</strong></td>
-          <td><%= @subtotal %></td>
+          <td><%= @subtotal[0] %></td>
         </tr>
         <tr>
           <td><strong>IVA:</strong></td>
-          <td><%= @iva %></td>
+          <td><%= @iva[0] %></td>
         </tr>
         <tr>
           <td><strong>Total:</strong></td>
-          <td><%= @total %></td>
+          <td><%= @total[0] %></td>
         </tr>
       </tbody>
       </table>
